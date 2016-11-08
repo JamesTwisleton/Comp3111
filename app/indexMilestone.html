@@ -26,6 +26,10 @@
    <!-- Customized libraries shared by pages -->
    <script src="js/site.js"></script>
 
+   <style>
+   .user {display:none;}
+   </style>
+
 
 
 </head>
@@ -43,9 +47,9 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#" >NOW3H3R3</a>
+                  <a class="navbar-brand" href="#" style="border 100px">NOW3H3R3</a>
                </div>
-               <div id="navbar" class="navbar-collapse collapse">
+               <div id="navbar" class="navbar-collapse collapse" >
                   <ul class="nav navbar-nav">
 
                      <li class="dropdown">
@@ -53,10 +57,12 @@
                         <ul class="dropdown-menu">
                            <li><a href="#page_about">NOW3H3R3</a></li>
                            <li>
-                              <a href="#page_team">About us</a>
+                              <a href="#page_team">The Team</a>
                            </li>
                            <li role="separator" class="divider"></li>
-                           <li><a href="#">Contacts </a></li>
+                           <li><a href="#">Event List </a></li>
+						   <li><a href="#">Join/Start a Team </a></li>
+						   <li><a href="#">Updates </a></li>
                         </ul>
                      </li>
 
@@ -98,20 +104,26 @@
          </div>
 
 
-         <div class="col-md-12"> 
-            <div class="w3-container">
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-					<ul class="w3-navbar w3-white">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Event Manager</a></li>
-						<li><a href="#">Team Leader</a></li>
-						<li><a href="#">Member</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-    </div>
- </div>
+ <ul class="w3-navbar w3-black">
+  <li><a href="javascript:void(0)"  onclick="openTab('EventManager')">Event Manager</a></li>
+  <li><a href="javascript:void(0)"  onclick="openTab('TeamLeader')">Team Leader</a></li>
+  <li><a href="javascript:void(0)"  onclick="openTab('Member')">Member</a></li>
+</ul>
+
+<div id="EventManager" class="w3-container  user">
+  <h2>Event Manager</h2>
+  <p>Create Event</p>
+</div>
+
+<div id="TeamLeader" class="w3-container  user">
+  <h2>Team Leader</h2>
+  <p>Make a Team</p>
+</div>
+
+<div id="Member" class="w3-container  user">
+  <h2>Member</h2>
+  <p>Be a Member</p>
+</div>
  
 </body>
 
@@ -130,6 +142,29 @@
 
 <!-- JavaScript of this page -->
 <script src="js/index.js"></script>
+<script>
+function openTab(userName) {
+    var i;
+    var x = document.getElementsByClassName("user");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    document.getElementById(userName).style.display = "block";
+}
+
+// function openTab(evt, userName) {
+//   var i, x, tablinks;
+//   x = document.getElementsByClassName("user");
+//   for (i = 0; i < x.length; i++) {
+//       x[i].style.display = "none";
+//   }
+//   tablinks = document.getElementsByClassName("tablink");
+//   for (i = 0; i < x.length; i++) {
+//       tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+//   }
+//   document.getElementById(userName).style.display = "block";
+//   }
+</script>
 
 </body>
 </html>
