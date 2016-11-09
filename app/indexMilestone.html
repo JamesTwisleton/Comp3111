@@ -88,6 +88,10 @@
       font-size: 16px;
       resize: none;
     }
+    
+    div:focus {
+      background-color: orangered;
+    }
     /*.dropbtn {
       background-color: #4CAF50;
       color: white;
@@ -207,7 +211,7 @@
 
       <div class="col-md-12">
         <div class="row">
-          <ul class="w3-navbar w3-yellow">
+          <ul class="w3-navbar w3-white">
             <li class="col-md-4"><a href="javascript:void(0)" onclick="openTab('EventManager')">Event Manager</a></li>
             <li class="col-md-4"><a href="javascript:void(0)" onclick="openTab('TeamLeader')">Team Leader</a></li>
             <li class="col-md-4"><a href="javascript:void(0)" onclick="openTab('Member')">Member</a></li>
@@ -215,7 +219,7 @@
         </div>
       </div>
 
-      <div id="EventManager" class="w3-container  user">
+      <div id="EventManager" class="w3-container user" tabindex="1">
         <h2>Event Manager</h2>
         <form>
           <input type="text" id="fname" name="fname" placeholder="Event Name">
@@ -253,14 +257,64 @@
         <input type="submit" value="Create" onclick="createFunction()">
       </div>
 
-      <div id="TeamLeader" class="w3-container  user">
+      <div id="TeamLeader" class="w3-container  user" tabindex="2">
         <h2>Team Leader</h2>
-        <p>Make a Team</p>
+        <div>
+          <form>
+            <input type="text" id="fname" name="fname" placeholder="Team Name">
+          </form>
+        </div>
+        <div>
+          <form>
+            <select id="eventType" name="eventType">
+              <option value="--Select an Event Type--">--Select an Event--</option>
+              <option value="Type 1">Event 1</option>
+              <option value="Type 2">Event 2</option>
+              <option value="Type 3">Event 3</option>
+            </select>
+          </form>
+        </div>
+        <div>
+          <form>
+            <input type="text" id="fname" name="fname" placeholder="Team size e.g. 1 - 3 ">
+          </form>
+        </div>
+        <div>
+          <form>
+            <input type="text" id="fname" name="fname" placeholder="Request acceptance deadline (dd/mm/yy)">
+          </form>
+        </div>
+        <div>
+          <form>
+            <textarea placeholder="Add some descriptions..."></textarea>
+          </form>
+        </div>
+        <input type="reset" value="Reset" onclick="resetFunction()">
+        <input type="submit" value="Create" onclick="createFunction()">
       </div>
 
-      <div id="Member" class="w3-container  user">
+      <div id="Member" class="w3-container  user" tabindex="3">
         <h2>Member</h2>
-        <p>Be a Member</p>
+        <div>
+          <form>
+            <select id="eventType" name="eventType">
+              <option value="--Select an Event Type--">--Select an Event--</option>
+              <option value="Type 1">Event 1</option>
+              <option value="Type 2">Event 2</option>
+              <option value="Type 3">Event 3</option>
+            </select>
+          </form>
+        </div>
+        <div>
+          <form>
+            <select id="eventType" name="eventType">
+              <option value="--Select an Event Type--">--Select an Team--</option>
+              <option value="Type 1">Team 1</option>
+              <option value="Type 2">Team 2</option>
+              <option value="Type 3">Team 3</option>
+            </select>
+          </form>
+        </div>
       </div>
 
 
@@ -289,6 +343,7 @@ function openTab(userName) {
        x[i].style.display = "none";
     }
     document.getElementById(userName).style.display = "block";
+    
 }
 function resetFunction() {
     confirm("Are you sure you want to reset?");
